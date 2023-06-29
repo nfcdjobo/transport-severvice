@@ -4,7 +4,7 @@
   "description": "Gestion de compagnie de transport",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "nodemon index.js",
     "build": "npm i"
   },
   "author": "DJOBO N'dri François Carêm",
