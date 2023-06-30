@@ -72,14 +72,17 @@ class ConnexionController{
 
     static async loginPassager(req, res){
         try {
+            
             Passager.findOne({email: req.body.email, statut: 1})
             .then((user)=>{
-                console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!',pass)
+                console.log('°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°', user)
                 if(!user){
                     res.status(401).json({msg: "Email incorrect !"})
                 }else{
-                 bcrypt.compare(req.body.password, user.password)
-                 .then((pass) => {
+                    
+                    bcrypt.compare(req.body.password, user.password)
+                    .then((pass) => {
+                    console.log('°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°', req.body)
                     console.log('::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::',pass)
                     if(!pass) return res.status(401).json({msg:"Mot de passe incorrect !!"})
                     req.auth = {
@@ -93,7 +96,7 @@ class ConnexionController{
                             token: jwt.sign(req.auth, "PRIVATE_TOKEN_KEY", {expiresIn: "24h"}, process.env.JWT_TOKEN_SECRET),
                         })
                     })
-                 .catch((error)=> res.status(400).json({error: error}))
+                    .catch((error)=> res.status(400).json({error: error}))
                 }
             })
             .catch(error=>{
