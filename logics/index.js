@@ -13,7 +13,8 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next(); 
   });
-app.use('/stockage', express.static(path.join(__dirname, 'stockage')));
+app.use(express.static(path.join(__dirname, 'stockage')));
+// app.use('/stockage', express.static(path.join(__dirname, 'stockage')));
 
 const port = process.env.PORT || 3000;
 const routing = require('./routes/routing');

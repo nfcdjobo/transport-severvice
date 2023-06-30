@@ -8,7 +8,7 @@ class IndexController{
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <a href='/' id='si'>Loc</a>
+        <a href='../' id='si'>Loc</a>
     </body>
 </html>`)
     }

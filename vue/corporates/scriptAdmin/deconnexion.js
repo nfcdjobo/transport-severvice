@@ -33,12 +33,12 @@ window.addEventListener(`DOMContentLoaded`, (e)=>{
 
 
     if(!localStorage.SESSION_TRANSPORT){
-        if(location.href.includes('index.html')){
+        if(location.href.includes('index.html') || location.href.split('/')[location.href.split('/').length-1]==''){
             deconnexionConnexionRef.forEach(item=>item.innerHTML=`<a href="#">Se connecter</a>
             <ul class="sub-menu">
-                <li><a href="corporates/login.html">Administrateur</a></li>
-                <li><a href="corporates/login2.html">Conducteur</a></li>
-                <li><a href="corporates/login3.html">Client</a></li>
+                <li><a href="./corporates/login.html">Administrateur</a></li>
+                <li><a href="./corporates/login2.html">Conducteur</a></li>
+                <li><a href="./corporates/login3.html">Client</a></li>
             </ul>`);
         }else{
             deconnexionConnexionRef.forEach(item=>item.innerHTML=`<a href="#">Se connecter</a>
