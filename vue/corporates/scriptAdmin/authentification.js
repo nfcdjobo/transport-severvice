@@ -119,8 +119,7 @@ window.addEventListener(`DOMContentLoaded`, (e)=>{
                 const formData=new FormData(formulaire);
                 const data=new URLSearchParams(formData);
                 console.log(data)
-                // await fetch(`${urlApi}loginPassager`, {
-                await fetch(`http://localhost:3000/api/loginPassager`, {
+                await fetch(`${urlApi}loginPassager`, {
                     method:'POST',
                     body:data
                 })

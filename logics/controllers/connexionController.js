@@ -75,7 +75,6 @@ class ConnexionController{
             
             Passager.findOne({email: req.body.email, statut: 1})
             .then((user)=>{
-                console.log('°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°', user)
                 if(!user){
                     res.status(401).json({msg: "Email incorrect !"})
                 }else{
